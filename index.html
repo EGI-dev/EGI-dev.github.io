@@ -14,25 +14,53 @@
             font-size: 8rem; /* Adjust the size as needed */
             text-align: center;
         }
+        nav {
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+    }
+    nav ul {
+        display: flex;
+        gap: 1rem;
+        list-style: none; /* Remove default list style */
+        margin: 0; /* Remove default margin */
+        padding: 0; /* Remove default padding */
+    }
+    nav ul li a {
+        padding: 0.5rem 1rem;
+    }
     </style>
+   
 </head>
 <body>
-    <header class="container">
-        <nav>
-            <ul>
-                <li><a href="#">About</a></li>
-                <li><a href="#">Team</a></li>
-                <li><a href="#">Contact</a></li>
-            </ul>
-        </nav>
-    </header>
-    <main class="container">
-        <section class="centered-text">
-            <h1>HELLO</h1>
-        </section>
-    </main>
-    <footer class="container">
-        <p>2024 EGI</p>
-    </footer>
+<header class="container">
+    <nav>
+        <ul>
+            <li><a href="#about" role="button" class="secondary">About</a></li>
+            <li><a href="#team" role="button" class="secondary">Team</a></li>
+            <li><a href="#contact" role="button" class="secondary">Contact</a></li>
+        </ul>
+    </nav>
+</header>
+<main class="container">
+    <section class="centered-text">
+        <h1>HELLO</h1>
+    </section>
+    <section id="about" class="container">
+        <h2>About</h2>
+        <p>This is the About section.</p>
+    </section>
+    <section id="team" class="container">
+        <h2>Team</h2>
+        <p>This is the Team section.</p>
+    </section>
+    <section id="contact" class="container">
+        <h2>Contact</h2>
+        <p>This is the Contact section.</p>
+    </section>
+</main>
+<footer class="container">
+    <p>&copy; 2024 EGI</p>
+</footer>
 </body>
 </html>
