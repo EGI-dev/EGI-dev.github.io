@@ -123,11 +123,28 @@
             margin: 0; /* Remove default margins */
         }
 
-        #team p {
-            text-align: justify; /* Justify paragraphs */
-            max-width: 800px; /* Optional: Limit width for better readability */
-            margin: 0 auto; /* Center text block horizontally */
+        .team-member {
+            display: inline-block;
+            text-align: center;
+            margin: 2rem;
         }
+
+        .team-member img {
+            width: 150px; /* Adjust the size as needed */
+            height: 150px; /* Ensure it's a square */
+            border-radius: 50%; /* Make the image circular */
+            object-fit: cover; /* Ensure the image covers the area without distortion */
+            border: 2px solid #ddd; /* Optional: Add a border */
+            margin-bottom: 1rem; /* Space between image and text */
+        }
+        .team-member p {
+    text-align: justify; /* Justify paragraphs */
+    margin: 0; /* Remove default margins */
+    max-width: 800px; /* Optional: Limit width for better readability */
+    margin-left: auto; /* Center text block horizontally */
+    margin-right: auto; /* Center text block horizontally */
+    padding-bottom: 1rem; /* Add space below each paragraph */
+}
     </style>
 </head>
 <body>
@@ -157,15 +174,24 @@
     <section id="team" class="container">
         <h2>Our Talend Team</h2>
         <p>A dynamic trio of tech specialists ready to tackle your toughest challenges. <br><br></p>
+        <div class="team-member">
+        <img src="images/gilles.jpeg" alt="Gilles">
         <h3>Gilles</h3>
         <h4>Computer Engineer</h4>
         <p><br>Gilles holds a master’s degree specializing in artificial intelligence and optimization, with a minor in finance and entrepreneurship. His education at Ecole Polytechnique de Bruxelles has provided him with a solid foundation in data analysis and engineering. At Wequity, he excelled as a Data Engineer, leveraging his skills in processing and analyzing data to generate actionable insights. Gilles' enthusiasm for startups and his commitment to environmental impact make him a dynamic and valuable asset to any team.<br><br></p>
+        </div>
+        <div class="team-member">
+        <img src="images/emma.png" alt="Emma">
         <h3>Emma</h3>
         <h4>Data Scientist</h4>
         <p><br>Emma brings a rich background in biomedical engineering and data science, backed by her academic pursuits at Maastricht University and Trinity College Dublin. Her experience includes developing computer vision algorithms for medical imaging and working on neurocardiovascular research at St. James's Hospital in Dublin. Emma’s proficiency in Python, Java, and various other programming languages, combined with her hands-on experience in cutting-edge research, positions her as a crucial asset for any tech-driven project.<br><br></p>
+        </div>
+        <div class="team-member">
+        <img src="images/ivan.jpeg" alt="Ivan">
         <h3>Ivan</h3>
         <h4>LSE Graduate</h4>
         <p><br>Ivan’s marketing acumen, honed at The London School of Economics, coupled with his practical experience in high-pressure environments, provides our team with a strategic edge. His work at TEDxGateway in Mumbai and GetVantage has seen him excel in digital communication and innovative funding strategies. Ivan’s ability to work across various cultures and environments ensures that our marketing strategies are as diverse as they are effective.<br><br></p>
+        </div>
     </section>
     <section id="contact" class="container">
         <h2>Contact</h2>
