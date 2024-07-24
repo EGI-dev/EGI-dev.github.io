@@ -4,63 +4,188 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="color-scheme" content="light dark" />
-    <link rel="stylesheet" href="css/pico.min.css" />
+    <link rel="stylesheet" href="pico-main/css/pico.min.css" />
     <style>
-        .centered-text {
+        body, html {
+            margin: 0;
+            padding: 0;
+            width: 100%;
+            overflow-x: hidden; /* Prevent horizontal scrolling */
+        }
+
+        .container {
+            width: 100%;
+            padding: 0 1rem; /* Add padding to container */
+            box-sizing: border-box; /* Include padding in width calculation */
+        }
+
+        header {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 1000; /* Ensure the header stays on top */
+            background: var(--background-color); /* Match background color */
+            padding: 1rem;
+        }
+
+        nav {
             display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 90vh;
-            font-size: 8rem; /* Adjust the size as needed */
+            justify-content: flex-end;
+        }
+
+        nav ul {
+            display: flex;
+            gap: 1rem;
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        main {
+            margin-top: 5rem; /* Add margin to avoid content hidden under fixed header */
+            padding: 1rem; /* Optional: Add padding for main content */
+        }
+
+        footer {
+            padding: 1rem;
             text-align: center;
         }
-        nav {
-        display: flex;
-        justify-content: flex-end;
-        align-items: center;
-    }
-    nav ul {
-        display: flex;
-        gap: 1rem;
-        list-style: none; /* Remove default list style */
-        margin: 0; /* Remove default margin */
-        padding: 0; /* Remove default padding */
-    }
-    nav ul li a {
-        padding: 0.5rem 1rem;
-    }
+
+        /* Section styling */
+        section {
+            position: relative; /* Ensure pseudo-element positioning works */
+            padding: 2rem 1rem; /* Adjust padding as needed */
+        }
+
+        /* Fine line between sections */
+        section:not(:first-of-type)::after {
+            content: "";
+            display: block;
+            width: 50%; /* Adjust width to control the length of the line */
+            height: 1px; /* Thickness of the line */
+            background: #ccc; /* Color of the line */
+            margin: 2rem auto; /* Center the line horizontally and add vertical spacing */
+        }
+
+        /* Centered text and headings */
+        .centered-text, #about, #contact {
+            text-align: center;
+        }
+
+        .centered-text {
+            display: flex;
+            flex-direction: column;
+            justify-content: center; /* Center content vertically */
+            align-items: center; /* Center content horizontally */
+            height: 90vh; /* Set the height to 90% of the viewport height */
+            padding: 0 20px; /* Optional: Adjust horizontal padding */
+        }
+
+        .centered-text h1 {
+            font-size: 8em; /* Adjust size as needed */
+            margin-bottom: 20px; /* Space below HELLO */
+        }
+
+        .centered-text h3 {
+            font-size: 2em; /* Adjust size as needed */
+            margin-bottom: 10px; /* Space below Welcome to EGI */
+        }
+
+        .centered-text h4 {
+            font-size: 1.5em; /* Adjust size as needed */
+            margin-bottom: 20px; /* Space below Data Science that Drives Real Change */
+        }
+
+        .centered-text p {
+            font-size: 1.2em; /* Adjust size as needed */
+            line-height: 1.6; /* Adjust line height for readability */
+            max-width: 800px; /* Optional: Limit paragraph width for readability */
+            margin: 0 auto; /* Center the paragraph */
+        }
+
+        #about h2, #about h3 {
+            margin-bottom: 1rem; /* Space below headings */
+        }
+
+        #about p {
+            text-align: justify; /* Justify the text within paragraphs */
+            max-width: 800px; /* Limit width for better readability */
+            margin: 0 auto; /* Center paragraphs horizontally */
+            line-height: 1.6; /* Improve readability with line height */
+        }
+
+        /* Specific styles for sections */
+        #team {
+            text-align: center; /* Center all text in the section */
+        }
+
+        #team h3, #team h4 {
+            margin: 0; /* Remove default margins */
+        }
+
+        #team p {
+            text-align: justify; /* Justify paragraphs */
+            max-width: 800px; /* Optional: Limit width for better readability */
+            margin: 0 auto; /* Center text block horizontally */
+        }
     </style>
-   
 </head>
 <body>
-<header class="container">
-    <nav>
-        <ul>
-            <li><a href="#about" role="button" class="secondary">About</a></li>
-            <li><a href="#team" role="button" class="secondary">Team</a></li>
-            <li><a href="#contact" role="button" class="secondary">Contact</a></li>
-        </ul>
-    </nav>
-</header>
+    <header class="container">
+        <nav>
+            <ul>
+                <li><button class="outline contrast" onclick="scrollToSection('about')">About</button></li>
+                <li><button class="outline contrast" onclick="scrollToSection('team')">Team</button></li>
+                <li><button class="outline contrast" onclick="scrollToSection('contact')">Contact</button></li>
+            </ul>
+        </nav>
+    </header>
 <main class="container">
     <section class="centered-text">
-        <h1>HELLO</h1>
+        <h1>HELLO.</h1>
+        <h3>Welcome to EGI. </h3>
+        <p>At EGI, we harness the power of advanced data science and AI to transform challenges into opportunities.</p>
+        <h3>Our motto: Excellence. Growth. Innovation.</h3>
+
     </section>
     <section id="about" class="container">
         <h2>About</h2>
-        <p>This is the About section.</p>
+        <h3>Data Science that Drives Real Change.</h3>
+        <p>Whether you need to optimize existing systems, enhance software with new features, or develop innovative digital solutions, we’ve got you covered. We specialize in leveraging advanced data science and AI to solve complex challenges, turning your problems into opportunities for growth. Our collaborative approach ensures we work closely with you to understand your unique needs and craft tailored solutions that drive real change.</p>
+        <p><br> Let’s explore how we can unlock the full potential of your data together.</p>
     </section>
     <section id="team" class="container">
-        <h2>Team</h2>
-        <p>This is the Team section.</p>
+        <h2>Our Talend Team</h2>
+        <p>A dynamic trio of tech specialists ready to tackle your toughest challenges. <br><br></p>
+        <h3>Gilles</h3>
+        <h4>Computer Engineer</h4>
+        <p><br>Gilles holds a master’s degree specializing in artificial intelligence and optimization, with a minor in finance and entrepreneurship. His education at Ecole Polytechnique de Bruxelles has provided him with a solid foundation in data analysis and engineering. At Wequity, he excelled as a Data Engineer, leveraging his skills in processing and analyzing data to generate actionable insights. Gilles' enthusiasm for startups and his commitment to environmental impact make him a dynamic and valuable asset to any team.<br><br></p>
+        <h3>Emma</h3>
+        <h4>Data Scientist</h4>
+        <p><br>Emma brings a rich background in biomedical engineering and data science, backed by her academic pursuits at Maastricht University and Trinity College Dublin. Her experience includes developing computer vision algorithms for medical imaging and working on neurocardiovascular research at St. James's Hospital in Dublin. Emma’s proficiency in Python, Java, and various other programming languages, combined with her hands-on experience in cutting-edge research, positions her as a crucial asset for any tech-driven project.<br><br></p>
+        <h3>Ivan</h3>
+        <h4>LSE Graduate</h4>
+        <p><br>Ivan’s marketing acumen, honed at The London School of Economics, coupled with his practical experience in high-pressure environments, provides our team with a strategic edge. His work at TEDxGateway in Mumbai and GetVantage has seen him excel in digital communication and innovative funding strategies. Ivan’s ability to work across various cultures and environments ensures that our marketing strategies are as diverse as they are effective.<br><br></p>
     </section>
     <section id="contact" class="container">
         <h2>Contact</h2>
-        <p>This is the Contact section.</p>
+        <h3>Want to collaborate ? Or have any questions ?</h3>
+        <p>Please contact us via this form. We reply within 24h.</p>
     </section>
 </main>
 <footer class="container">
     <p>&copy; 2024 EGI</p>
 </footer>
+
+<script>
+    function scrollToSection(sectionId) {
+        const section = document.getElementById(sectionId);
+        if (section) {
+            section.scrollIntoView({ behavior: 'smooth' });
+        } else {
+            console.error(`Section with ID ${sectionId} not found`);
+        }
+    }
+</script>
 </body>
 </html>
