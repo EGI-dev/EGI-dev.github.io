@@ -110,7 +110,7 @@
         <h2>Contact</h2>
         <h3>Want to collaborate ? Or have any questions ?</h3>
         <p>Please contact us via this form. We reply within 24h.</p>
-        <form name="contact" method="POST" data-netlify=true>
+        <form name="contact" method="POST" data-netlify-recaptcha="true" data-netlify=true>
             <p>
               <label>Your Name: <input type="text" name="name" required/></label>
             </p>
@@ -123,6 +123,9 @@
             <p>
               <label>Message: <textarea name="message" required></textarea></label>
             </p>
+            </p>
+                <div data-netlify-recaptcha="true"></div>
+            <p>
             <p>
               <button type="submit">Send</button>
             </p>
