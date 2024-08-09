@@ -1,0 +1,166 @@
+body, html {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    overflow-x: hidden; /* Prevent horizontal scrolling */
+}
+
+.container {
+    width: 100%;
+    padding: 0 1rem; /* Add padding to container */
+    box-sizing: border-box; /* Include padding in width calculation */
+}
+
+header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000; /* Ensure the header stays on top */
+    background: var(--background-color); /* Match background color */
+    padding: 1rem;
+}
+
+nav {
+    display: flex;
+    justify-content: flex-end;
+}
+
+nav ul {
+    display: flex;
+    gap: 1rem;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+main {
+    margin-top: 5rem; /* Add margin to avoid content hidden under fixed header */
+    padding: 1rem; /* Optional: Add padding for main content */
+}
+
+footer {
+    padding: 1rem;
+    text-align: center;
+}
+
+/* Section styling */
+section {
+    position: relative; /* Ensure pseudo-element positioning works */
+    padding: 2rem 1rem; /* Adjust padding as needed */
+}
+
+/* Fine line between sections */
+section:not(:first-of-type)::after {
+    content: "";
+    display: block;
+    width: 50%; /* Adjust width to control the length of the line */
+    height: 1px; /* Thickness of the line */
+    background: #ccc; /* Color of the line */
+    margin: 2rem auto; /* Center the line horizontally and add vertical spacing */
+}
+
+/* Centered text and headings */
+.centered-text, #about, #contact, #services, #projects, #values {
+    text-align: center;
+}
+
+.centered-text {
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Center content vertically */
+    align-items: center; /* Center content horizontally */
+    height: 90vh; /* Set the height to 90% of the viewport height */
+    padding: 0 20px; /* Optional: Adjust horizontal padding */
+}
+
+.centered-text h1 {
+    font-size: 8em; /* Adjust size as needed */
+    margin-bottom: 20px; /* Space below HELLO */
+}
+
+.centered-text h3 {
+    font-size: 2em; /* Adjust size as needed */
+    margin-bottom: 10px; /* Space below Welcome to EGI */
+}
+
+.centered-text h4 {
+    font-size: 1.5em; /* Adjust size as needed */
+    margin-bottom: 20px; /* Space below Data Science that Drives Real Change */
+}
+
+.centered-text p {
+    font-size: 1.2em; /* Adjust size as needed */
+    line-height: 1.6; /* Adjust line height for readability */
+    max-width: 800px; /* Optional: Limit paragraph width for readability */
+    margin: 0 auto; /* Center the paragraph */
+}
+
+#about h2, #about h3 {
+    margin-bottom: 1rem; /* Space below headings */
+}
+
+#about p {
+    text-align: justify; /* Justify the text within paragraphs */
+    max-width: 800px; /* Limit width for better readability */
+    margin: 0 auto; /* Center paragraphs horizontally */
+    line-height: 1.6; /* Improve readability with line height */
+}
+
+/* Specific styles for sections */
+#team {
+    text-align: center; /* Center all text in the section */
+}
+
+#team h3, #team h4 {
+    margin: 0; /* Remove default margins */
+}
+
+.team-member {
+    display: inline-block;
+    text-align: center;
+    margin: 2rem;
+}
+
+.team-member img {
+    width: 150px; /* Adjust the size as needed */
+    height: 150px; /* Ensure it's a square */
+    border-radius: 50%; /* Make the image circular */
+    object-fit: cover; /* Ensure the image covers the area without distortion */
+    border: 2px solid #ddd; /* Optional: Add a border */
+    margin-bottom: 1rem; /* Space between image and text */
+}
+.team-member p {
+    text-align: justify; /* Justify paragraphs */
+    margin: 0; /* Remove default margins */
+    max-width: 800px; /* Optional: Limit width for better readability */
+    margin-left: auto; /* Center text block horizontally */
+    margin-right: auto; /* Center text block horizontally */
+    padding-bottom: 1rem; /* Add space below each paragraph */
+}
+.carousel-container {
+    text-align: center;
+    padding: 2rem 0;
+}
+.carousel-images {
+    flex-wrap: wrap; /* Ensure images wrap on smaller screens */
+    gap: 1em; /* Space between images */
+    display: flex;
+    justify-content: center;
+    margin-top: 1em;
+}
+.carousel-images img {
+    width: 100px;
+    margin: 0 0.5em;
+    cursor: pointer;
+    transition: transform 0.3s;
+}
+.carousel-images img:hover {
+    transform: scale(1.1);
+}
+.carousel-text {
+    margin: 1em auto; /* Center the text block horizontally */
+    max-width: 800px; /* Ensure the text width aligns with other sections */
+    text-align: justify; /* Justify the text within the block */
+    line-height: 1.6; /* Improve readability with line height */
+    text-align-last: center; /* Center the last line if the text is not fully justified */
+}
