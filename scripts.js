@@ -13,12 +13,22 @@ function goToMainPage(sectionId) {
     window.location.href = '../index.html#'+ sectionId;
 }
 
-// Event listener for carousel images
-document.querySelectorAll('.carousel-images img').forEach(image => {
+// Event listener for carousel images with text info
+document.querySelectorAll('.carousel-images-text img').forEach(image => {
+    image.addEventListener('click', () => {
+        const text = image.getAttribute('data-text');
+        const carouselTextContainer = image.closest('.carousel-container').querySelector('.carousel-text');
+        carouselTextContainer.textContent = text ;
+    });
+});
+
+// Event listener for carousel images with learn more button redirecting to a new page
+document.querySelectorAll('.carousel-images-button img').forEach(image => {
     image.addEventListener('click', () => {
         const text = image.getAttribute('data-text');
         const url = image.getAttribute('data-url');
+        const carouselTextContainer = image.closest('.carousel-container').querySelector('.carousel-text');
         const buttonHtml = '<br><br><button class="outline contrast" onclick="window.location.href=\'' + url + '\'">Learn More</button>';
-        document.getElementById('carousel-text').innerHTML = text + buttonHtml;
+        carouselTextContainer.innerHTML = text + buttonHtml;
     });
 });

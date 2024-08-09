@@ -141,22 +141,40 @@ section:not(:first-of-type)::after {
     text-align: center;
     padding: 2rem 0;
 }
-.carousel-images {
+.carousel-images-text {
     flex-wrap: wrap; /* Ensure images wrap on smaller screens */
     gap: 1em; /* Space between images */
     display: flex;
     justify-content: center;
     margin-top: 1em;
 }
-.carousel-images img {
+.carousel-images-text img {
     width: 100px;
     margin: 0 0.5em;
     cursor: pointer;
     transition: transform 0.3s;
 }
-.carousel-images img:hover {
+.carousel-images-text img:hover {
     transform: scale(1.1);
 }
+
+.carousel-images-button {
+    flex-wrap: wrap; /* Ensure images wrap on smaller screens */
+    gap: 1em; /* Space between images */
+    display: flex;
+    justify-content: center;
+    margin-top: 1em;
+}
+.carousel-images-button img {
+    width: 100px;
+    margin: 0 0.5em;
+    cursor: pointer;
+    transition: transform 0.3s;
+}
+.carousel-images-button img:hover {
+    transform: scale(1.1);
+}
+
 .carousel-text {
     margin: 1em auto; /* Center the text block horizontally */
     max-width: 800px; /* Ensure the text width aligns with other sections */
