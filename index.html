@@ -112,16 +112,16 @@
         <p>Please contact us via this form. We reply within 24h.</p>
         <form name="contact" method="POST" data-netlify-recaptcha="true" netlify>
             <p>
-              <label>Your Name: <input type="text" name="name" /></label>
+              <label>Your Name: <input type="text" name="name" required/></label>
             </p>
             <p>
-              <label>Your Email: <input type="email" name="email" /></label>
+              <label>Your Email: <input type="email" name="email" required/></label>
             </p>
             <p>
-              <label>Subject: <input type="subject" name="subject" /></label>
+              <label>Subject: <input type="subject" name="subject" required/></label>
             </p>
             <p>
-              <label>Message: <textarea name="message"></textarea></label>
+              <label>Message: <textarea name="message" required></textarea></label>
             </p>
             <p>
               <button type="submit">Send</button>
