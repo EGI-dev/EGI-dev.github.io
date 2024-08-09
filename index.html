@@ -110,6 +110,24 @@
         <h2>Contact</h2>
         <h3>Want to collaborate ? Or have any questions ?</h3>
         <p>Please contact us via this form. We reply within 24h.</p>
+        <form name="contact" method="POST" netlify>
+            <p>
+              <label>Your Name: <input type="text" name="name" /></label>
+            </p>
+            <p>
+              <label>Your Email: <input type="email" name="email" /></label>
+            </p>
+            <p>
+              <label>Subject: <input type="subject" name="subject" /></label>
+            </p>
+            <p>
+              <label>Message: <textarea name="message"></textarea></label>
+            </p>
+            <p>
+              <button type="submit">Send</button>
+            </p>
+          </form>
+          
     </section>
 </main>
 <footer class="container">
