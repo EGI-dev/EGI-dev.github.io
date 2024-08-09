@@ -6,6 +6,7 @@
     <meta name="color-scheme" content="light dark" />
     <link rel="stylesheet" href="pico-main/css/pico.min.css" />
     <link rel="stylesheet" href="style.css">
+    <script src="scripts.js" defer></script>
 </head>
 <body>
     <header class="container">
@@ -88,26 +89,5 @@
 <footer class="container">
     <p>&copy; 2024 EGI</p>
 </footer>
-
-<script>
-    function scrollToSection(sectionId) {
-        const section = document.getElementById(sectionId);
-        if (section) {
-            section.scrollIntoView({ behavior: 'smooth' });
-        } else {
-            console.error(`Section with ID ${sectionId} not found`);
-        }
-    }
-</script>
-
-<script>
-    document.querySelectorAll('.carousel-images img').forEach(image => {
-        image.addEventListener('click', () => {
-            const text = image.getAttribute('data-text');
-            document.getElementById('carousel-text').textContent = text;
-        });
-    });
-</script>
-
 </body>
 </html>
